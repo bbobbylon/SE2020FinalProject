@@ -14,8 +14,8 @@ class Navbar extends Component {
               }}
               className="col s5 brand-logo center black-text"
             >
-              <HotTubIcon>
-                </HotTubIcon>
+             <i className="material-icons">code</i>
+              MERN
               SyllaMe
             </Link>
           </div>
