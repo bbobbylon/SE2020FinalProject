@@ -1,5 +1,5 @@
 {
     "git.ignoreLimitWarning": true,
-    "appService.defaultWebAppToDeploy": "",
+    "appService.defaultWebAppToDeploy": "/subscriptions/e5aa3e24-74ff-45c4-98e2-4570cdc2c9c4/resourceGroups/syllamerojrg/providers/Microsoft.Web/sites/SyllaMe",
     "appService.deploySubpath": "."
 }
