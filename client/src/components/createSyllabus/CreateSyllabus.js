@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import Navbar  from "../layout/Navbar";
 class CreateSyllabus extends Component {
   constructor(props) {
     super(props);
@@ -29,7 +28,6 @@ class CreateSyllabus extends Component {
 render() {
 return (
       <div style={{ height: "100%", margins: "auto"}}>
-        <Navbar/>
             <h4 style={{textAlign:"center"}}>
               <b>Create Syllabus</b>
             </h4>
