@@ -18,21 +18,11 @@ return (
             <h4>
               <b>Hey there,</b> {user.name.split(" ")[0]}
               <p className="flow-text grey-text text-darken-1">
-                Welcome to the application where you can build your own syllabus and save them so that you can access them later.
+              You are logged into a full-stack{" "}
+                <span style={{ fontFamily: "monospace" }}>MERN</span> app 👏
               </p>
             </h4>
-            <Link
-                to="/createSyllabus"
-                style={{
-                  width: "250px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px",
-                  marginTop: "1rem"
-                }}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-              >
-                Create Syllabus
-              </Link>
+        
             <button
               style={{
                 width: "150px",
