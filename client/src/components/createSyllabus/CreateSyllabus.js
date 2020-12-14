@@ -3,19 +3,23 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 class CreateSyllabus extends Component {
   constructor(props) {
     super(props);
+
+
+
     this.state = {
       title: '',
+      instructorName: '',
       courseNumber: '',
+      creditHours: '',
       officeNumber: '',
       officeHours: '',
-      creditHours: '',
       phoneNumber: '',
-      emailAddress: '',
-      instructorName: '',
+      emailAddress: '',     
       courseDescription: '',
       meetingTimes: '',
       meetingLocation: '',
@@ -35,6 +39,30 @@ class CreateSyllabus extends Component {
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+  }
+  onSubmit(e){
+    e.preventDefault()
+    const templateObject = {
+      title: this.state.title,
+      instructorName: this.state.instructorName,
+      courseNumber: this.state.courseNumber,
+      courseCreditHours: this.state.courseCreditHours,
+      officeNumber: this.state.officeNumber,
+      officeHours: this.state.officeHours,
+      phoneNumber: this.state.phoneNumber,
+      emailAddress: this.state.emailAddress,
+      courseDescription: this.state.courseDescription,
+      meetimgTimes: this.state.meetingTimes,
+      meetingLocation: this.state.meetingLocation, 
+      courseMaterials: this.state.courseMaterials,
+      gradingScale: this.state.gradingScale,
+      extraInfo: this.state.extraInfo
+
+    };
+    axios.post('http://localhost:5000/templates/createTemplate' , templateObject)
+    .then(res => console.log(res.data));
+    console.log('Template succesfully created !')
+    this.setState({title: '' , instructorName:'' , courseNumber:'' , creditHours:'' , officeNumber:'', officeHours:'' , phoneNumber:'' , emailAddress:'' , courseDescription:'', meetingTimes:'' , meetingLocation:'', courseMaterials:'', courseSchedule:'' , gradingScale:'' , extraInfo:''})
   }
   
   
@@ -145,10 +173,11 @@ return (
                 letterSpacing: "1.5px",
                 marginTop: "2rem"
               }}
-              onClick={this.onLogoutClick}
+              
               className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+              type= "submit"
             >
-              Logout
+              Submit
             </button>
             <Link
                 to="/dashboard"
