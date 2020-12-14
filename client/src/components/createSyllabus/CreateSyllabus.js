@@ -10,6 +10,7 @@ class CreateSyllabus extends Component {
       courseNumber: '',
       officeNumber: '',
       officeHours: '',
+      
     };
 
     this.onChange = this.onChange.bind(this);
