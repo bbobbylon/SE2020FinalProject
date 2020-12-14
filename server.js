@@ -18,7 +18,7 @@ app.use(
 app.use(bodyParser.json());
 
 
-/*
+
 //added some stuff to test
 app.use(express.static('./client/build'));
 app.get("*", (req, res) => {
@@ -29,7 +29,7 @@ app.get("*", (req, res) => {
 
  app.set('port', process.env.PORT || 5000);
  console.log("++++++++++++++++" + app.get('port'));
-*/
+
 
 // DB Config
 const db = require("./config/keys").mongoURI;
