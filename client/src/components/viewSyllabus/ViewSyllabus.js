@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { Link } from "react-router-dom";
 
-class Dashboard extends Component {
+class ViewSyllabus extends Component {
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
@@ -12,39 +12,25 @@ class Dashboard extends Component {
 render() {
     const { user } = this.props.auth;
 return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
-        <div className="row">
-          <div className="col s12 center-align">
-            <h4>
-              <b>Hey there,</b> {user.name.split(" ")[0]}
-              <p className="flow-text grey-text text-darken-1">
-              Welcome to the application where you can build your own syllabus and have access to them later.
-              </p>
-            </h4>
-            <Link
-                to="/createSyllabus"
+    <div style={{ height: "100%", margins: "auto"}}>
+    <h4 style={{textAlign:"center"}}>
+      <b>View Syllabi</b>
+    </h4>
+    <p className="flow-text grey-text text-darken-1" style={{textAlign:"center"}}>
+      Start browsing and editting the syllabi you made below!
+      </p>
+      <Link
+                to="/dashboard"
                 style={{
-                  width: "250px",
+                  width: "150px",
                   borderRadius: "3px",
                   letterSpacing: "1.5px",
-                  marginTop: "1rem"
+                  marginTop: "2rem",
+                  float: "right"
                 }}
                 className="btn btn-large waves-effect waves-light hoverable blue accent-3"
               >
-                Create Syllabus
-              </Link>
-              <Link
-                to="/viewSyllabus"
-                style={{
-                  width: "250px",
-                  borderRadius: "3px",
-                  letterSpacing: "1.5px",
-                  marginTop: "1rem",
-                  marginLeft: "2rem"
-                }}
-                className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-              >
-                View Syllabi
+                Home
               </Link>
             <button
               style={{
@@ -60,12 +46,10 @@ return (
               Logout
             </button>
           </div>
-        </div>
-      </div>
     );
   }
 }
-Dashboard.propTypes = {
+ViewSyllabus.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
 };
@@ -75,4 +59,4 @@ const mapStateToProps = state => ({
 export default connect(
   mapStateToProps,
   { logoutUser }
-)(Dashboard);
+)(ViewSyllabus);

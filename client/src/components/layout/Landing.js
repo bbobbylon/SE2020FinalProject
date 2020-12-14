@@ -12,7 +12,7 @@ class Landing extends Component {
             Login or register to start creating your Syllabi
             </h4>
             <p className="flow-text grey-text text-darken-1">
-            Explore other instructor's syllabi or build your own simply by inputting the course information.
+            Effortlessly build your own syllabi by inputting the proper course information.
             </p>
             <br />
             <div className="col s6">

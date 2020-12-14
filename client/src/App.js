@@ -12,7 +12,7 @@ import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateSyllabus from "./components/createSyllabus/CreateSyllabus";
-import history from "./components/history/history";
+import ViewSyllabus from "./components/viewSyllabus/ViewSyllabus";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -36,7 +36,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router history={history}>
+        <Router>
           <div className="App">
             <Navbar />
             <Route exact path="/" component={Landing} />
@@ -45,7 +45,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/createSyllabus" component={CreateSyllabus} />
-              
+              <PrivateRoute exact path="/viewSyllabus" component={ViewSyllabus} />
             </Switch>
           </div>
         </Router>
