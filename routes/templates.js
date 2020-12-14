@@ -3,9 +3,10 @@ const express = require ('express')
 const router = express.Router()
 
 //template model
-let templateSchema = require('../models/Template')
+let templateSchema = require('../models/Template');
+const Template = require('../models/Template');
 
-//CREATE TEMPLATE
+/*CREATE TEMPLATE
 router.route('/createTemplate').post((req, res, next) => {
     templateSchema.create(req.body, (error, data)=> {
         if (error){
@@ -17,6 +18,10 @@ router.route('/createTemplate').post((req, res, next) => {
         }
     })
 });
+
+
+*/
+
 
 router.route('/add').post((req, res) => {
     const title = req.body.title;
@@ -60,6 +65,7 @@ router.route('/add').post((req, res) => {
     .catch(err => res.status(400).json('Error:' + err))
 });
 
+
 //READ TEMPLATE
 router.route('/').get((req, res)=> {
     templateSchema.find()
@@ -69,11 +75,58 @@ router.route('/').get((req, res)=> {
 
 
 
+router.route('/:id').get((req, res) => {
+    templateSchema.findById(req.params.id)
+      .then(template => res.json(template))
+      .catch(err => res.status(400).json('Error: ' + err));
+  });
+  //update template
+  router.route('/update/:id').post((req, res) => {
+    templateSchema.findById(req.params.id)
+    .then(template => {
+        template.title = req.body.title
+        template.instructorName = req.body.instructorName
+        template.courseNumber = req.body.courseNumber
+        template.courseCreditHours = req.body.courseCreditHours
+        template.officeNumber = req.body.officeNumber
+        template.officeHours = req.body.officeHours
+        template.phoneNumber = req.body.phoneNumber
+        template.emailAddress - req.body.emailAddress
+        template.courseDescription = req.body.courseDescription
+        template.meetingTimes = req.body.meetingTimes
+        template.meetingLocation = req.body.meetingLocation
+        template.courseMaterials  = req.body.courseMaterials
+        template.courseSchedule = req.body.courseSchedule
+        template.gradingScale = req.body.gradingScale
+        template.extraInfo = req.body.extraInfo
+        
+
+        template.save()
+        .then(() => res.json('Template Udated!'))
+        .catch(err => res.status(400).jjson('Error: ' + err))
+    })
+    .catch(err => res.status(400).json('Error:' + err ))
+})
+
+  router.route('/:id').delete((req, res) => {
+    templateSchema.findByIdAndDelete(req.params.id)
+      .then(() => res.json('Template deleted.'))
+      .catch(err => res.status(400).json('Error: ' + err));
+  });
 
 
 
 
-//GET SINGLE TEMPLATE
+
+
+
+
+
+
+
+
+
+/*GET SINGLE TEMPLATE
 router.route ('/editTempalte').get((req, res) =>{
     templateSchema.findById(req.params.id, (error, data) =>{
         if(error){
@@ -102,9 +155,11 @@ router.route('/updateTemplate').put((req,res, next) =>{
     }
     )
 })
+*/
 
 
-//DELETE TEMPLATE   
+
+/*DELETE TEMPLATE   
 router.route('/deleteTemplate').delete((req, res, next) =>{
 templateSchema.findByIdAndRemove(req.params.id, (error, data) =>{
     if(error){
@@ -116,5 +171,5 @@ templateSchema.findByIdAndRemove(req.params.id, (error, data) =>{
     }
 })
 })
-
+*/
 module.exports = router

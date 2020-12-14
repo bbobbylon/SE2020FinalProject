@@ -58,7 +58,7 @@ class CreateSyllabus extends Component {
       gradingScale: this.state.gradingScale,
       extraInfo: this.state.extraInfo
     };
-    axios.post('http://localhost:5000/templates/createTemplate' , templateObject)
+    axios.post('http://localhost:5000/templates/add' , templateObject)
     .then(res => console.log(res.data));
     console.log('Template succesfully created !')
     this.setState({title: '' , instructorName:'' , courseNumber:'' , creditHours:'' , officeNumber:'', officeHours:'' , phoneNumber:'' , emailAddress:'' , courseDescription:'', meetingTimes:'' , meetingLocation:'', courseMaterials:'', courseSchedule:'' , gradingScale:'' , extraInfo:''})
