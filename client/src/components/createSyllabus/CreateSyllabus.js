@@ -78,91 +78,91 @@ return (
                 <div>
                   <label>Class Title: </label>
                   <br />
-                  <input type="text" name="title" onChange={this.onChangeTitle} value={this.state.title} />
+                  <input type="text" name="title" onChange={this.onChange} value={this.state.title} />
                 </div>
                 <br/>
                 <div>
                   <label>Instructor's Name: </label>
                   <br />
-                  <input type="text" name="instructorName" onChange={this.onChangeInstructorName} value={this.state.instructorName} />
+                  <input type="text" name="instructorName" onChange={this.onChange} value={this.state.instructorName} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Number: </label>
                   <br />
-                  <input type="text" name="courseNumber" onChange={this.onChangeCourseNumber} value={this.state.courseNumber} />
+                  <input type="text" name="courseNumber" onChange={this.onChange} value={this.state.courseNumber} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Credit Hours: </label>
                   <br />
-                  <input type="text" name="creditHours" onChange={this.onChangeCreditHours} value={this.state.creditHours} />
+                  <input type="text" name="creditHours" onChange={this.onChange} value={this.state.creditHours} />
                 </div>
                 <br/>
                 <div>
                   <label>Office Number: </label>
                   <br />
-                  <input type="text" name="officeNumber" onChange={this.onChangeOfficeNumber} value={this.state.officeNumber} />
+                  <input type="text" name="officeNumber" onChange={this.onChange} value={this.state.officeNumber} />
                 </div>
                 <br/>
                 <div>
                   <label>Office Hours: </label>
                   <br />
-                  <input type="text" name="officeHours" onChange={this.onChangeOfficeHours} value={this.state.officeHours} />
+                  <input type="text" name="officeHours" onChange={this.onChange} value={this.state.officeHours} />
                 </div>
                 <br/>
                 <div>
                   <label>Phone number: </label>
                   <br />
-                  <input type="text" name="phoneNumber" onChange={this.onChangePhoneNumber} value={this.state.phoneNumber} />
+                  <input type="text" name="phoneNumber" onChange={this.onChange} value={this.state.phoneNumber} />
                 </div>
                 <br/>
                 <div>
                   <label>Email Address: </label>
                   <br />
-                  <input type="text" name="emailAddress" onChange={this.onChangeEmailAddress} value={this.state.emailAddress} />
+                  <input type="text" name="emailAddress" onChange={this.onChange} value={this.state.emailAddress} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Description: </label>
                   <br />
-                  <input type="text" name="courseDescription" onChange={this.onChangeCourseDescription} value={this.state.courseDescription} />
+                  <input type="text" name="courseDescription" onChange={this.onChange} value={this.state.courseDescription} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Meeting Times: </label>
                   <br />
-                  <input type="text" name="meetingTimes" onChange={this.onChangeMeetingTimes} value={this.state.meetingTimes} />
+                  <input type="text" name="meetingTimes" onChange={this.onChange} value={this.state.meetingTimes} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Meeting Location: </label>
                   <br />
-                  <input type="text" name="meetingLocation" onChange={this.onChangeMeetingLocation} value={this.state.meetingLocation} />
+                  <input type="text" name="meetingLocation" onChange={this.onChange} value={this.state.meetingLocation} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Materials: </label>
                   <br />
-                  <input type="text" name="courseMaterials" onChange={this.onChangeCourseMaterials} value={this.state.courseMaterials} />
+                  <input type="text" name="courseMaterials" onChange={this.onChange} value={this.state.courseMaterials} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Schedule: </label>
                   <br />
-                  <input type="text" name="courseSchedule" onChange={this.onChangeCourseSchedule} value={this.state.courseSchedule} />
+                  <input type="text" name="courseSchedule" onChange={this.onChange} value={this.state.courseSchedule} />
                 </div>
                 <br/>
                 <div>
                   <label>Grading Scale: </label>
                   <br />
-                  <input type="text" name="gradingScale" onChange={this.onChangeGradingScale} value={this.state.gradingScale} />
+                  <input type="text" name="gradingScale" onChange={this.onChange} value={this.state.gradingScale} />
                 </div>
                 <br/>
                 <div>
                   <label>Extra Information: </label>
                   <br />
-                  <input type="text" name="extraInfo" onChange={this.onChangeExtraInfo} value={this.state.extraInfo} />
+                  <input type="text" name="extraInfo" onChange={this.onChange} value={this.state.extraInfo} />
                 </div>
               </form>
             <button
