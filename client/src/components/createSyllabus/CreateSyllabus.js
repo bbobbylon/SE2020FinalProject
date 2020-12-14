@@ -8,25 +8,6 @@ import axios from "axios";
 class CreateSyllabus extends Component {
   constructor(props) {
     super(props);
-    this.onChangeTitle = this.onChangeTitle.bind(this);
-    this.onChangeInstructorName = this.onChangeInstructorName.bind(this);
-    this.onChangeCourseNumber = this.onChangeCourseNumber.bind(this);
-    this.onChangeCreditHours = this.onChangeCreditHours.bind(this);
-    this.onChangeOfficeNumber = this.onChangeOfficeNumber.bind(this);
-    this.onChangeOfficeHours = this.onChangeOfficeHours.bind(this);
-    this.onChangePhoneNumber = this.onChangePhoneNumber.bind(this);
-    this.onChangeEmailAddress = this.onChangeEmailAddress.bind(this);
-    this.onChangeCourseDescription = this.onChangeCourseDescription.bind(this);
-    this.onChangeMeetingTimes= this.onChangeMeetingTimes.bind(this);
-    this.onChangeMeetingLocation = this.onChangeMeetingLocation.bind(this);
-    this.onChangeCourseMaterials = this.onChangeCourseMaterials.bind(this);
-    this.onChangeCourseSchedule = this.onChangeCourseSchedule.bind(this);
-    this.onChangeGradingScale = this.onChangeGradingScale.bind(this);
-    this.onChangeExtraInfo = this.onChangeExtraInfo.bind(this);
-
-
-
-
     this.state = {
       title: '',
       instructorName: '',
@@ -45,51 +26,9 @@ class CreateSyllabus extends Component {
       extraInfo: ''
     };
 
-  }
-  onChangeTitle(e) {
-    this.setState({title: e.target.value})
-  }
-  onChangeInstructorName(e) {
-    this.setState({instructorName: e.target.value})
-  }
-  onChangeCourseNumber(e) {
-    this.setState({courseNumber: e.target.value})
-  }
-  onChangeCreditHours(e) {
-    this.setState({creditHours: e.target.value})
-  }
-  onChangeOfficeNumber(e) {
-    this.setState({officeNumber: e.target.value})
-  }
-  onChangeOfficeHours(e) {
-    this.setState({officeHours: e.target.value})
-  }
-  onChangePhoneNumber(e) {
-    this.setState({phoneNumber: e.target.value})
-  }
-  onChangeEmailAddress(e) {
-    this.setState({emailAddress: e.target.value})
-  }
-  onChangeCourseDescription(e) {
-    this.setState({courseDescription: e.target.value})
-  }
-  onChangeMeetingTimes(e) {
-    this.setState({meetingTimes: e.target.value})
-  }
-  onChangeMeetingLocation(e) {
-    this.setState({meetingLocation: e.target.value})
-  }
-  onChangeCourseMaterials(e) {
-    this.setState({courseMaterials: e.target.value})
-  }
-  onChangeCourseSchedule(e) {
-    this.setState({courseSchedule: e.target.value})
-  }
-  onChangeGradingScale(e) {
-    this.setState({gradingScale: e.target.value})
-  }
-  onChangeExtraInfo(e) {
-    this.setState({extraInfo: e.target.value})
+    
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onLogoutClick = e => {
@@ -100,6 +39,7 @@ class CreateSyllabus extends Component {
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
+
   onSubmit(e){
     e.preventDefault()
     const templateObject = {
@@ -117,7 +57,6 @@ class CreateSyllabus extends Component {
       courseMaterials: this.state.courseMaterials,
       gradingScale: this.state.gradingScale,
       extraInfo: this.state.extraInfo
-
     };
     axios.post('http://localhost:5000/templates/createTemplate' , templateObject)
     .then(res => console.log(res.data));
@@ -135,7 +74,7 @@ return (
             <p className="flow-text grey-text text-darken-1" style={{textAlign:"center"}}>
               Fill out the information below to start making your syllabus!
               </p>
-              <form>
+              <form onSubmit={this.onSubmit}>
                 <div>
                   <label>Class Title: </label>
                   <br />
