@@ -42,6 +42,7 @@ class CreateSyllabus extends Component {
 
   onSubmit(e){
     e.preventDefault()
+
     const templateObject = {
       title: this.state.title,
       instructorName: this.state.instructorName,
@@ -61,6 +62,7 @@ class CreateSyllabus extends Component {
     axios.post('http://localhost:5000/templates/add' , templateObject)
     .then(res => console.log(res.data));
     console.log('Template succesfully created !')
+    console.log(templateObject)
     this.setState({title: '' , instructorName:'' , courseNumber:'' , creditHours:'' , officeNumber:'', officeHours:'' , phoneNumber:'' , emailAddress:'' , courseDescription:'', meetingTimes:'' , meetingLocation:'', courseMaterials:'', courseSchedule:'' , gradingScale:'' , extraInfo:''})
   }
   
@@ -164,8 +166,7 @@ return (
                   <br />
                   <input type="text" name="extraInfo" onChange={this.onChange} value={this.state.extraInfo} />
                 </div>
-              </form>
-            <button
+                <button
               style={{
                 width: "150px",
                 borderRadius: "3px",
@@ -178,6 +179,9 @@ return (
             >
               Submit
             </button>
+              </form>
+
+           
             <Link
                 to="/dashboard"
                 style={{
