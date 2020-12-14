@@ -11,7 +11,9 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
-import CreateSyllabus from "./components/createSyllabus/CreateSyllabus"
+import CreateSyllabus from "./components/createSyllabus/CreateSyllabus";
+import history from "./components/history/history";
+
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth
@@ -34,7 +36,7 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <Router>
+        <Router history={history}>
           <div className="App">
             <Navbar />
             <Route exact path="/" component={Landing} />

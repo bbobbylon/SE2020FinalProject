@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { Link } from "react-router-dom";
+import { Button } from "react-bootstrap";
+import history from "./../history/history";
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -21,6 +23,10 @@ return (
               Welcome to the application where you can build your own syllabus and save them so that you can access them later.
               </p>
             </h4>
+            <form>
+              <Button variant="btn btn-success" onClick={() => history.push('/createSyllabus')}>Create Syllabus
+              </Button>
+            </form>
             <Link
                 to="/createSyllabus"
                 style={{
