@@ -8,6 +8,22 @@ import axios from "axios";
 class CreateSyllabus extends Component {
   constructor(props) {
     super(props);
+    this.onChangeTitle = this.onChangeTitle.bind(this);
+    this.onChangeInstructorName = this.onChangeInstructorName.bind(this);
+    this.onChangeCourseNumber = this.onChangeCourseNumber.bind(this);
+    this.onChangeCreditHours = this.onChangeCreditHours.bind(this);
+    this.onChangeOfficeNumber = this.onChangeOfficeNumber.bind(this);
+    this.onChangeOfficeHours = this.onChangeOfficeHours.bind(this);
+    this.onChangePhoneNumber = this.onChangePhoneNumber.bind(this);
+    this.onChangeEmailAddress = this.onChangeEmailAddress.bind(this);
+    this.onChangeCourseDescription = this.onChangeCourseDescription.bind(this);
+    this.onChangeMeetingTimes= this.onChangeMeetingTimes.bind(this);
+    this.onChangeMeetingLocation = this.onChangeMeetingLocation.bind(this);
+    this.onChangeCourseMaterials = this.onChangeCourseMaterials.bind(this);
+    this.onChangeCourseSchedule = this.onChangeCourseSchedule.bind(this);
+    this.onChangeGradingScale = this.onChangeGradingScale.bind(this);
+    this.onChangeExtraInfo = this.onChangeExtraInfo.bind(this);
+
 
 
 
@@ -29,7 +45,51 @@ class CreateSyllabus extends Component {
       extraInfo: ''
     };
 
-    this.onChange = this.onChange.bind(this);
+  }
+  onChangeTitle(e) {
+    this.setState({title: e.target.value})
+  }
+  onChangeInstructorName(e) {
+    this.setState({instructorName: e.target.value})
+  }
+  onChangeCourseNumber(e) {
+    this.setState({courseNumber: e.target.value})
+  }
+  onChangeCreditHours(e) {
+    this.setState({creditHours: e.target.value})
+  }
+  onChangeOfficeNumber(e) {
+    this.setState({officeNumber: e.target.value})
+  }
+  onChangeOfficeHours(e) {
+    this.setState({officeHours: e.target.value})
+  }
+  onChangePhoneNumber(e) {
+    this.setState({phoneNumber: e.target.value})
+  }
+  onChangeEmailAddress(e) {
+    this.setState({emailAddress: e.target.value})
+  }
+  onChangeCourseDescription(e) {
+    this.setState({courseDescription: e.target.value})
+  }
+  onChangeMeetingTimes(e) {
+    this.setState({meetingTimes: e.target.value})
+  }
+  onChangeMeetingLocation(e) {
+    this.setState({meetingLocation: e.target.value})
+  }
+  onChangeCourseMaterials(e) {
+    this.setState({courseMaterials: e.target.value})
+  }
+  onChangeCourseSchedule(e) {
+    this.setState({courseSchedule: e.target.value})
+  }
+  onChangeGradingScale(e) {
+    this.setState({gradingScale: e.target.value})
+  }
+  onChangeExtraInfo(e) {
+    this.setState({extraInfo: e.target.value})
   }
 
   onLogoutClick = e => {
@@ -79,91 +139,91 @@ return (
                 <div>
                   <label>Class Title: </label>
                   <br />
-                  <input type="text" name="title" onChange={this.onChange} value={this.state.title} />
+                  <input type="text" name="title" onChange={this.onChangeTitle} value={this.state.title} />
                 </div>
                 <br/>
                 <div>
                   <label>Instructor's Name: </label>
                   <br />
-                  <input type="text" name="instructorName" onChange={this.onChange} value={this.state.instructorName} />
+                  <input type="text" name="instructorName" onChange={this.onChangeInstructorName} value={this.state.instructorName} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Number: </label>
                   <br />
-                  <input type="text" name="courseNumber" onChange={this.onChange} value={this.state.courseNumber} />
+                  <input type="text" name="courseNumber" onChange={this.onChangeCourseNumber} value={this.state.courseNumber} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Credit Hours: </label>
                   <br />
-                  <input type="text" name="creditHours" onChange={this.onChange} value={this.state.creditHours} />
+                  <input type="text" name="creditHours" onChange={this.onChangeCreditHours} value={this.state.creditHours} />
                 </div>
                 <br/>
                 <div>
                   <label>Office Number: </label>
                   <br />
-                  <input type="text" name="officeNumber" onChange={this.onChange} value={this.state.officeNumber} />
+                  <input type="text" name="officeNumber" onChange={this.onChangeOfficeNumber} value={this.state.officeNumber} />
                 </div>
                 <br/>
                 <div>
                   <label>Office Hours: </label>
                   <br />
-                  <input type="text" name="officeHours" onChange={this.onChange} value={this.state.officeHours} />
+                  <input type="text" name="officeHours" onChange={this.onChangeOfficeHours} value={this.state.officeHours} />
                 </div>
                 <br/>
                 <div>
                   <label>Phone number: </label>
                   <br />
-                  <input type="text" name="phoneNumber" onChange={this.onChange} value={this.state.phoneNumber} />
+                  <input type="text" name="phoneNumber" onChange={this.onChangePhoneNumber} value={this.state.phoneNumber} />
                 </div>
                 <br/>
                 <div>
                   <label>Email Address: </label>
                   <br />
-                  <input type="text" name="emailAddress" onChange={this.onChange} value={this.state.emailAddress} />
+                  <input type="text" name="emailAddress" onChange={this.onChangeEmailAddress} value={this.state.emailAddress} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Description: </label>
                   <br />
-                  <input type="text" name="courseDescription" onChange={this.onChange} value={this.state.courseDescription} />
+                  <input type="text" name="courseDescription" onChange={this.onChangeCourseDescription} value={this.state.courseDescription} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Meeting Times: </label>
                   <br />
-                  <input type="text" name="meetingTimes" onChange={this.onChange} value={this.state.meetingTimes} />
+                  <input type="text" name="meetingTimes" onChange={this.onChangeMeetingTimes} value={this.state.meetingTimes} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Meeting Location: </label>
                   <br />
-                  <input type="text" name="meetingLocation" onChange={this.onChange} value={this.state.meetingLocation} />
+                  <input type="text" name="meetingLocation" onChange={this.onChangeMeetingLocation} value={this.state.meetingLocation} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Materials: </label>
                   <br />
-                  <input type="text" name="courseMaterials" onChange={this.onChange} value={this.state.courseMaterials} />
+                  <input type="text" name="courseMaterials" onChange={this.onChangeCourseMaterials} value={this.state.courseMaterials} />
                 </div>
                 <br/>
                 <div>
                   <label>Course Schedule: </label>
                   <br />
-                  <input type="text" name="courseSchedule" onChange={this.onChange} value={this.state.courseSchedule} />
+                  <input type="text" name="courseSchedule" onChange={this.onChangeCourseSchedule} value={this.state.courseSchedule} />
                 </div>
                 <br/>
                 <div>
                   <label>Grading Scale: </label>
                   <br />
-                  <input type="text" name="gradingScale" onChange={this.onChange} value={this.state.gradingScale} />
+                  <input type="text" name="gradingScale" onChange={this.onChangeGradingScale} value={this.state.gradingScale} />
                 </div>
                 <br/>
                 <div>
                   <label>Extra Information: </label>
                   <br />
-                  <input type="text" name="extraInfo" onChange={this.onChange} value={this.state.extraInfo} />
+                  <input type="text" name="extraInfo" onChange={this.onChangeExtraInfo} value={this.state.extraInfo} />
                 </div>
               </form>
             <button
