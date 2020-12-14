@@ -2,13 +2,13 @@ const mongoose = require ('mongoose')
 const Schema = mongoose.Schema;
 const templateSchema = new Schema({
     title: {type: String, required: true},
-    instructorName: {type: Number, required: true, minlength:5},
+    instructorName: {type: String, required: true, minlength:2},
     courseNumber: {type: String, requiered: true},
     courseCreditHours: {type : String, reuired : true},
     officeNumber: {type: String, required: true}, 
     officeHours: {type: String, reuired : true},
-    phoneNumber: {type: String, required: true}, 
-    emailAddress: {type: String, reuired : true},
+    phoneNumber: {type: String, required: true, maxlength: 10}, 
+    emailAddress: {type: String, reuired : true, minlength:10},
     courseDescription: {type: String, required: true}, 
     meetingTimes: {type: String, reuired : true},
     meetingLocation: {type: String, required: true}, 
